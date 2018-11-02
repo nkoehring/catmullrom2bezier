@@ -16,25 +16,25 @@ on this and other aspects is welcome.
  
 The syntax is as follows:
 
-`([number],[number])+  R([number],[number])+ ([number],[number])*`
-
-For example:
-
 ```html
-  <path stroke="#BADA55" 
-        stroke-width="2"
-        fill="none" 
-        d="M20,380 
-           R58,342 
-           100,342 
-           100,300 
-           140,250 
-           190,210 
-           220,197 
-           250,184 
-           280,155 
-           310,260 
-           404,20"/>  
+import cr2bezier from 'catmullrom2bezier' 
+
+const crPath = [
+  'M20,380', 
+  'R58,342', 
+  '100,342', 
+  '100,300', 
+  '140,250', 
+  '190,210', 
+  '220,197', 
+  '250,184', 
+  '280,155', 
+  '310,260', 
+  '404,20'  
+].join(' ')
+
+const bezierPath = cr2bezier(crPath)
+document.getElementById('the-path').setAttribute('d', bezierPath)
 ```
 
 In other words, there must be at least one coordinate pair preceding the 
