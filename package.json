@@ -1,0 +1,23 @@
+{
+  "name": "catmullrom2bezier",
+  "description": "Catmull-Rom Spline to Bezier Spline Converter",
+  "main": "catmullrom2bezier.js",
+  "jsnext:main": "catmullrom2bezier.es.js",
+  "license": "MIT",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkoehring/catmullrom2bezier.git"
+  },
+  "scripts": {
+    "build": "babel catmullrom2bezier.es.js -o catmullrom2bezier.js",
+    "minify": "uglifyjs catmullrom2bezier.js  -o catmullrom2bezier.min.js -c -m",
+    "prepublish": "yarn build && yarn minify"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "uglify-js": "^3.4.9"
+  }
+}
